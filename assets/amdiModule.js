@@ -10,35 +10,35 @@
 | |\/| | | | | | __| |_____| | | |/ _ \ \ / / |/ __/ _ \
 | |  | | |_| | | |_| |_____| |_| |  __/\ V /| | (_|  __/
 |_|  |_|\__,_|_|\__|_|     |____/ \___| \_/ |_|\___\___|
-* @project_name Queen Amdi [WA Multi-device]
-* @author BlackAmda <https://github.com/BlackAmda>
-* @description A WhatsApp based 3ʳᵈ party application that provide many services with a real-time automated conversational experience
-* @link <https://github.com/BlackAmda/QueenAmdi>
+* @project_name King Anonymous [WA Multi-device]
+* @author Uthpala mahikalpa <https://github.com/wabot333>
+* @description All credits goes to BlackAmda
+* @link <https://github.com/BlackAmda/wabot333>
 * @version 4.0.6
-* @file  amdiModule.js - QueenAmdi bot module and Web WA connection
+* @file  amdiModule.js - KingAnonymous bot module and Web WA connection
 
-© 2022 Black Amda, ANTECH. All rights reserved.
+© 2023 uthpala mahikalpa. All rights reserved.
 Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.*/
+you may not use this file except in complance with the License.*/
 
-const amdiWA = require('queen_amdi_core/dist/amdiCore');
-const { qrDisplayDL } = require('queen_amdi_core/dist/qrDisplay');
-const amdiWEB = require('queen_amdi_core/qr_code/amdiWEB');
+const anonymousWA = require('king_anonymous_core/dist/anonymousCore');
+const { qrDisplayDL } = require('king_anonymous_core/dist/qrDisplay');
+const anonymousWEB = require('king_anonymous_core/qr_code/anonymousWEB');
 
-amdiWA.start()
+anonymousWA.start()
 
 const events = async () => {
-    const WASocket = await amdiWA.ev.on("open.connection");
+    const WASocket = await anonymousWA.ev.on("open.connection");
 
     await qrDisplayDL();
-    await amdiWEB.appObj();
+    await anonymousWEB.appObj();
     
-    amdiWA.ev.on("connection.update", WASocket);
-    amdiWA.ev.on("auth.update", WASocket);
-    amdiWA.ev.on("messages.upsert", WASocket);
+    anonymousWA.ev.on("connection.update", WASocket);
+    anonymousWA.ev.on("auth.update", WASocket);
+    anonymousWA.ev.on("messages.upsert", WASocket);
     
-    amdiWA.ev.on("group.updates", WASocket);
-    amdiWA.ev.on("call.manage", WASocket);
+    anonymousWA.ev.on("group.updates", WASocket);
+    anonymousWA.ev.on("call.manage", WASocket);
 }
 events();
 
